@@ -6,16 +6,21 @@
 <div class="container">
     <div class="film-detail">
         <div class="film-image-large">
-            {% set image = film.affiche ?: 'https://via.placeholder.com/200x300?text=No+Image' %}
+            {% set image = film.affiche ?: 'https://picsum.photos/600/400' %}
             <img src="{{ image }}" alt="{{ film.titre }}">
         </div>
         <div class="film-info-detail">
             <h1>{{ film.titre }}</h1>
             <p><strong>Année:</strong> {{ film.annee }}</p>
-            <p><strong>Genre:</strong> {{ film.genre.nom }}</p>
+            <p><strong>Genre:</strong> {{ film.genre.categorie }}</p>
             <p><strong>Description:</strong></p>
             <p>{{ film.description }}</p>
-            <a href="{{ path('app_film') }}" class="back-link">Retour au catalogue</a>
+            <div class="actions">
+                <a href="{{ path('app_film') }}" class="back-link">Retour au catalogue</a>
+                <form method="post" action="{{ path('app_film_delete', {'id': film.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce film ?');">
+                    <button type="submit" class="delete-btn">Supprimer</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

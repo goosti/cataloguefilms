@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\FilmRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: FilmRepository::class)]
 class Film
@@ -15,12 +16,16 @@ class Film
     private ?int $id = null;
 
     #[ORM\Column(length: 200)]
+    #[Assert\NotBlank]
     private ?string $titre = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
     private ?string $description = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
+    #[Assert\Range(min: 1900, max: 2030)]
     private ?int $annee = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -28,7 +33,8 @@ class Film
 
     #[ORM\ManyToOne(inversedBy: 'films')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?genre $genre = null;
+    #[Assert\NotBlank]
+    private ?Genre $genre = null;
 
     public function getId(): ?int
     {
@@ -83,12 +89,12 @@ class Film
         return $this;
     }
 
-    public function getGenre(): ?genre
+    public function getGenre(): ?Genre
     {
         return $this->genre;
     }
 
-    public function setGenre(?genre $genre): static
+    public function setGenre(?Genre $genre): static
     {
         $this->genre = $genre;
 

@@ -5,6 +5,7 @@
 {% block body %}
 <div class="container">
     <h1>Catalogue de Films</h1>
+    <a href="{{ path('app_film_new') }}" class="add-film-link">Ajouter un nouveau film</a>
     <div class="film-grid">
         {% for film in films %}
             <div class="film-item">
