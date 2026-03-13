@@ -6,16 +6,16 @@
 <div class="container">
     <h1>Ajouter un nouveau film</h1>
 
-    {{ form_start(form) }}
-        {{ form_row(form.titre) }}
-        {{ form_row(form.description) }}
-        {{ form_row(form.annee) }}
-        {{ form_row(form.affiche) }}
-        {{ form_row(form.genre) }}
+    {{ form_start(form) }}<br>
+        {{ form_row(form.titre) }}<br>
+        {{ form_row(form.description) }}<br>
+        {{ form_row(form.annee) }}<br>
+        {{ form_row(form.affiche) }}<br>
+        {{ form_row(form.genre) }}<br>
 
         <button type="submit" class="btn">Ajouter le film</button>
-    {{ form_end(form) }}
+    {{ form_end(form) }}<br><br>
 
-    <a href="{{ path('app_film') }}">Retour à la liste</a>
+    <a href="{{ path('app_film') }}" style="text-decoration: none;color: #1da100;padding:15px; background-color: #0b3d02;margin-top:20px;border:2px solid #1da100;border-radius:15px;">Retour à la liste</a>
 </div>
 {% endblock %}

@@ -10,10 +10,10 @@
         <div class="flash-success">{{ message }}</div>
     {% endfor %}
 
-    {{ form_start(form) }}
-        {{ form_row(form.nom) }}
-        {{ form_row(form.mail) }}
-        {{ form_row(form.message) }}
+    {{ form_start(form) }}<br>
+        {{ form_row(form.nom) }}<br>
+        {{ form_row(form.mail) }}<br>
+        {{ form_row(form.message) }}<br>
 
         <button type="submit" class="btn">Envoyer</button>
     {{ form_end(form) }}
