@@ -127,3 +127,27 @@
 .delete-btn:hover {
     background: #c82333;
 }
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+.flash-success {
+    padding: 12px 16px;
+    border: 1px solid #c3e6cb;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
