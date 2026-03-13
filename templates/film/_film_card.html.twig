@@ -1,0 +1,12 @@
+{% set image = film.affiche ?: 'https://via.placeholder.com/200x300?text=No+Image' %}
+<div class="film-card">
+    <img src="{{ image }}" alt="{{ film.titre }}" class="film-image">
+    <div class="film-info">
+        <h3 class="film-title">{{ film.titre }}</h3>
+        <p class="film-details">
+            <strong>Année:</strong> {{ film.annee }}<br>
+            <strong>Genre:</strong> {{ film.genre.nom }}
+        </p>
+        <a href="{{ path('app_film_show', {'id': film.id}) }}" class="film-link">Voir détails</a>
+    </div>
+</div>

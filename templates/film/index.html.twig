@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catalogue de Films{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Catalogue de Films</h1>
+    <div class="film-grid">
+        {% for film in films %}
+            <div class="film-item">
+                {% include 'film/_film_card.html.twig' with {'film': film} %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
